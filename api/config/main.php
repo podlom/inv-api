@@ -46,16 +46,10 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                [
+/*                [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'feed',
-                ],
-                [
-                    'class' => 'yii\rest\UrlRule',
-                    'controller' => 'category',
-//                    'pluralize' => false,
-//                    'only' => ['index', 'options'],
-                ],
+                ], */
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'news',
@@ -63,7 +57,13 @@ return [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'tag',
+                    'controller' => 'analytics',
+                    'only' => ['index', 'view', 'options'],
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'investments',
+                    'only' => ['index', 'view', 'options'],
                 ],
             ],
         ],
