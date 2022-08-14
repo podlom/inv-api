@@ -25,23 +25,7 @@ class AuthAccessRole extends CommonAuthAccessRole
      */
     public function rules()
     {
-        return [
-            [['id', 'description'], 'required'],
-            [['description'], 'string'],
-            [['id'], 'string', 'max' => 255],
-            [['id'], 'unique'],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => Yii::t('app', 'ID'),
-            'description' => Yii::t('app', 'Description'),
-        ];
+        return [];
     }
 
     /**

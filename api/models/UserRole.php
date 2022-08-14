@@ -23,25 +23,7 @@ class UserRole extends CommonUserRole
      */
     public function rules()
     {
-        return [
-            [['user_id', 'role_id'], 'required'],
-            [['user_id'], 'integer'],
-            [['role_id'], 'string', 'max' => 255],
-            [['user_id', 'role_id'], 'unique', 'targetAttribute' => ['user_id', 'role_id']],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => AuthUser::className(), 'targetAttribute' => ['user_id' => 'id']],
-            [['role_id'], 'exist', 'skipOnError' => true, 'targetClass' => AuthAccessRole::className(), 'targetAttribute' => ['role_id' => 'id']],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'user_id' => Yii::t('app', 'User ID'),
-            'role_id' => Yii::t('app', 'Role ID'),
-        ];
+        return [];
     }
 
     /**

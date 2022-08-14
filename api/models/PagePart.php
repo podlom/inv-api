@@ -30,29 +30,7 @@ class PagePart extends CommonPagePart
      */
     public function rules()
     {
-        return [
-            [['page_id', 'type'], 'integer'],
-            [['text'], 'string'],
-            [['type'], 'required'],
-            [['title', 'name', 'url'], 'string', 'max' => 255],
-            [['page_id'], 'exist', 'skipOnError' => true, 'targetClass' => Page::className(), 'targetAttribute' => ['page_id' => 'id']],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => Yii::t('app', 'ID'),
-            'page_id' => Yii::t('app', 'Page ID'),
-            'title' => Yii::t('app', 'Title'),
-            'name' => Yii::t('app', 'Name'),
-            'text' => Yii::t('app', 'Text'),
-            'url' => Yii::t('app', 'Url'),
-            'type' => Yii::t('app', 'Type'),
-        ];
+        return [];
     }
 
     /**
