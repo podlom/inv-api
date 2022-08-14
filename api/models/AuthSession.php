@@ -24,7 +24,28 @@ class AuthSession extends CommonAuthSession
      */
     public function rules()
     {
-        return [];
+        return [
+            [['sess_id', 'data', 'time'], 'required'],
+            [['data'], 'string'],
+            [['time'], 'safe'],
+            [['user_id'], 'integer'],
+            [['sess_id'], 'string', 'max' => 255],
+            [['sess_id'], 'unique'],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => AuthUser::className(), 'targetAttribute' => ['user_id' => 'id']],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'sess_id' => Yii::t('app', 'Sess ID'),
+            'data' => Yii::t('app', 'Data'),
+            'time' => Yii::t('app', 'Time'),
+            'user_id' => Yii::t('app', 'User ID'),
+        ];
     }
 
     /**

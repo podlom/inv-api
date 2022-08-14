@@ -59,7 +59,45 @@ class Page extends CommonPage
      */
     public function rules()
     {
-        return [];
+        return [
+            [['image_id', 'user_id', 'route_id', 'parent_id', 'deleted', 'status', 'class', 'sort1', 'past2'], 'integer'],
+            [['h1', 'published', 'short_text', 'attr', 'class'], 'required'],
+            [['published', 'created', 'updated'], 'safe'],
+            [['short_text', 'attr'], 'string'],
+            [['rating'], 'number'],
+            [['h1', 'subpath'], 'string', 'max' => 255],
+            [['route_id'], 'exist', 'skipOnError' => true, 'targetClass' => Routing::className(), 'targetAttribute' => ['route_id' => 'id']],
+            [['image_id'], 'exist', 'skipOnError' => true, 'targetClass' => PagePart::className(), 'targetAttribute' => ['image_id' => 'id']],
+            [['parent_id'], 'exist', 'skipOnError' => true, 'targetClass' => Page::className(), 'targetAttribute' => ['parent_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => AuthUser::className(), 'targetAttribute' => ['user_id' => 'id']],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => Yii::t('app', 'ID'),
+            'image_id' => Yii::t('app', 'Image ID'),
+            'user_id' => Yii::t('app', 'User ID'),
+            'route_id' => Yii::t('app', 'Route ID'),
+            'parent_id' => Yii::t('app', 'Parent ID'),
+            'h1' => Yii::t('app', 'H 1'),
+            'deleted' => Yii::t('app', 'Deleted'),
+            'published' => Yii::t('app', 'Published'),
+            'short_text' => Yii::t('app', 'Short Text'),
+            'subpath' => Yii::t('app', 'Subpath'),
+            'created' => Yii::t('app', 'Created'),
+            'updated' => Yii::t('app', 'Updated'),
+            'attr' => Yii::t('app', 'Attr'),
+            'status' => Yii::t('app', 'Status'),
+            'class' => Yii::t('app', 'Class'),
+            'rating' => Yii::t('app', 'Rating'),
+            'sort1' => Yii::t('app', 'Sort 1'),
+            'past2' => Yii::t('app', 'Past 2'),
+        ];
     }
 
     /**

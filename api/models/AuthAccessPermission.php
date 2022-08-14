@@ -24,7 +24,22 @@ class AuthAccessPermission extends CommonAuthAccessPermission
      */
     public function rules()
     {
-        return [];
+        return [
+            [['title', 'type'], 'required'],
+            [['title', 'type'], 'string', 'max' => 255],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => Yii::t('app', 'ID'),
+            'title' => Yii::t('app', 'Title'),
+            'type' => Yii::t('app', 'Type'),
+        ];
     }
 
     /**
