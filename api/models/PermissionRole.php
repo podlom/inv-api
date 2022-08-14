@@ -23,25 +23,7 @@ class PermissionRole extends CommonPermissionRole
      */
     public function rules()
     {
-        return [
-            [['permission_id', 'role_id'], 'required'],
-            [['permission_id'], 'integer'],
-            [['role_id'], 'string', 'max' => 255],
-            [['permission_id', 'role_id'], 'unique', 'targetAttribute' => ['permission_id', 'role_id']],
-            [['role_id'], 'exist', 'skipOnError' => true, 'targetClass' => AuthAccessRole::className(), 'targetAttribute' => ['role_id' => 'id']],
-            [['permission_id'], 'exist', 'skipOnError' => true, 'targetClass' => AuthAccessPermission::className(), 'targetAttribute' => ['permission_id' => 'id']],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'permission_id' => Yii::t('app', 'Permission ID'),
-            'role_id' => Yii::t('app', 'Role ID'),
-        ];
+        return [];
     }
 
     /**

@@ -36,29 +36,7 @@ class AuthUser extends CommonAuthUser
      */
     public function rules()
     {
-        return [
-            [['name', 'passwd', 'status', 'attr'], 'required'],
-            [['status', 'image_id'], 'integer'],
-            [['attr'], 'string'],
-            [['email', 'name', 'passwd'], 'string', 'max' => 255],
-            [['image_id'], 'exist', 'skipOnError' => true, 'targetClass' => PagePart::className(), 'targetAttribute' => ['image_id' => 'id']],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => Yii::t('app', 'ID'),
-            'email' => Yii::t('app', 'Email'),
-            'name' => Yii::t('app', 'Name'),
-            'passwd' => Yii::t('app', 'Passwd'),
-            'status' => Yii::t('app', 'Status'),
-            'attr' => Yii::t('app', 'Attr'),
-            'image_id' => Yii::t('app', 'Image ID'),
-        ];
+        return [];
     }
 
     /**
