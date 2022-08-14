@@ -11,7 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
 
     // i18N
-    'language' => 'ru-RU',
+    'language' => 'en-US',
     'sourceLanguage' => 'en-US',
 
     'controllerNamespace' => 'api\controllers',
@@ -26,11 +26,6 @@ return [
         'response' => [
             'class' => 'yii\web\Response',
             'format' => 'json',
-        ],
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
