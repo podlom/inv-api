@@ -13,7 +13,7 @@ use yii\rest\ActiveController;
  */
 class NewsController extends ActiveController
 {
-    public $modelClass = 'api\models\Page';
+    public $modelClass = 'api\models\NewsRu';
 
     public function fields()
     {
