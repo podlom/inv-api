@@ -46,13 +46,14 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-/*                [
-                    'class' => 'yii\rest\UrlRule',
-                    'controller' => 'feed',
-                ], */
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'news',
+                    'only' => ['index', 'view', 'options'],
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'newsuk',
                     'only' => ['index', 'view', 'options'],
                 ],
                 [
