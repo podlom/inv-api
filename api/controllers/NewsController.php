@@ -14,4 +14,16 @@ use yii\rest\ActiveController;
 class NewsController extends ActiveController
 {
     public $modelClass = 'api\models\Page';
+
+    public function fields()
+    {
+        return [
+            'id',
+            'h1',
+            'published',
+            'short_text',
+            'subpath',
+            'created',
+        ];
+    }
 }
