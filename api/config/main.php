@@ -48,12 +48,19 @@ return [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'news',
+                    'controller' => 'novyny',
                     'only' => ['index', 'view', 'options'],
+                    'pluralize' => false,
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'newsuk',
+                    'controller' => 'novosti',
+                    'only' => ['index', 'view', 'options'],
+                    'pluralize' => false,
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'news',
                     'only' => ['index', 'view', 'options'],
                 ],
                 [

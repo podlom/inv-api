@@ -7,13 +7,13 @@ use yii\rest\ActiveController;
 
 
 /**
- * Class NewsController
+ * Class NovostiController
  *
  * @package api\controllers
  */
-class NewsController extends ActiveController
+class NovostiController extends ActiveController
 {
-    public $modelClass = 'api\models\NewsEn';
+    public $modelClass = 'api\models\NewsRu';
 
     public function fields()
     {

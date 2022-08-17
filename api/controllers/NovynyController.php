@@ -11,7 +11,7 @@ use yii\rest\ActiveController;
  *
  * @package api\controllers
  */
-class NewsukController extends ActiveController
+class NovynyController extends ActiveController
 {
     public $modelClass = 'api\models\NewsUk';
 
