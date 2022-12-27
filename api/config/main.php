@@ -65,6 +65,18 @@ return [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
+                    'controller' => 'analityka',
+                    'only' => ['index', 'view', 'options'],
+                    'pluralize' => false,
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'analitika',
+                    'only' => ['index', 'view', 'options'],
+                    'pluralize' => false,
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
                     'controller' => 'analytics',
                     'only' => ['index', 'view', 'options'],
                 ],
