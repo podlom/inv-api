@@ -77,7 +77,7 @@ return [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'analytics',
+                    'controller' => 'analitics',
                     'only' => ['index', 'view', 'options'],
                 ],
                 [
