@@ -46,6 +46,9 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
+                'GET /novyny/<id:\d+>' => 'novyny/view',
+                'GET /novosti/<id:\d+>' => 'novosti/view',
+                'GET /news/<id:\d+>' => 'news/view',
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'novyny',
@@ -63,6 +66,9 @@ return [
                     'controller' => 'news',
                     'only' => ['index', 'view', 'options'],
                 ],
+                'GET /analityka/<id:\d+>' => 'analityka/view',
+                'GET /analitika/<id:\d+>' => 'analitika/view',
+                'GET /analitics/<id:\d+>' => 'analitics/view',
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'analityka',

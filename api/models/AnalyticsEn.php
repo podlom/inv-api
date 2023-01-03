@@ -1,7 +1,7 @@
 <?php
-
 /**
  * @author    Taras Shkodenko <taras@shkodenko.com>
+ * @copyright Shkodenko V. Taras, https://www.shkodenko.com/
  */
 
 namespace api\models;
@@ -44,5 +44,10 @@ class AnalyticsEn extends CommonAnalyticsEn
     public function rules()
     {
         return [];
+    }
+
+    public static function primaryKey()
+    {
+        return ['id'];
     }
 }

@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author    Taras Shkodenko <taras@shkodenko.com>
+ * @copyright Shkodenko V. Taras, https://www.shkodenko.com/
+ */
 
 namespace api\models;
 
@@ -39,5 +43,10 @@ class NewsEn extends CommonNewsEn
     public function rules()
     {
         return [];
+    }
+
+    public static function primaryKey()
+    {
+        return ['id'];
     }
 }

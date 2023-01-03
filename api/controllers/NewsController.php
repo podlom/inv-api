@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author    Taras Shkodenko <taras@shkodenko.com>
+ * @copyright Shkodenko V. Taras, https://www.shkodenko.com/
+ */
 
 namespace api\controllers;
 
@@ -19,6 +23,7 @@ class NewsController extends ActiveController
     {
         return [
             'id',
+            'parent_id',
             'h1',
             'published',
             'short_text',
