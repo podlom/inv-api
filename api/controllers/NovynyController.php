@@ -7,6 +7,7 @@
 namespace api\controllers;
 
 
+use yii\base\DynamicModel;
 use yii\rest\ActiveController;
 
 
@@ -30,5 +31,21 @@ class NovynyController extends ActiveController
             'subpath',
             'created',
         ];
+    }
+
+    public function actions()
+    {
+        $actions = parent::actions();
+
+        $actions['index']['dataFilter'] = [
+            'class' => \yii\data\ActiveDataFilter::class,
+            'attributeMap' => [
+                'categoryIn' => 'category_in',
+                'categoryTitle' => 'category_title',
+            ],
+            'searchModel' => (new DynamicModel(['id', 'category_id', 'category_title']))->addRule(['id', 'category_id'], 'integer', ['min' => 1])->addRule(['category_title'], 'string', ['length' => [1, 255]]),
+        ];
+
+        return $actions;
     }
 }
