@@ -33,6 +33,7 @@ use common\models\NewsUk as CommonNewsUk;
  * @property int|null $sort1
  * @property int|null $past2
  * @property string|null $picture_url
+ * @property int|null $category_id
  * @property string|null $category_title
  */
 class NewsUk extends CommonNewsUk
