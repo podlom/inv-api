@@ -24,7 +24,27 @@ class AuthLogin extends CommonAuthLogin
      */
     public function rules()
     {
-        return [];
+        return [
+            [['login', 'token', 'expires'], 'required'],
+            [['user_id'], 'integer'],
+            [['expires'], 'safe'],
+            [['login', 'token'], 'string', 'max' => 255],
+            [['login'], 'unique'],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => AuthUser::className(), 'targetAttribute' => ['user_id' => 'id']],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'login' => Yii::t('app', 'Login'),
+            'user_id' => Yii::t('app', 'User ID'),
+            'token' => Yii::t('app', 'Token'),
+            'expires' => Yii::t('app', 'Expires'),
+        ];
     }
 
     /**
