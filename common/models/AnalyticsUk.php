@@ -34,6 +34,7 @@ use Yii;
  * @property string|null $picture_url
  * @property string|null $category_title
  * @property int|null $page_views
+ * @property string|null $full_text
  */
 class AnalyticsUk extends \yii\db\ActiveRecord
 {
