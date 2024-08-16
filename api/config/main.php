@@ -1,4 +1,5 @@
 <?php
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -90,6 +91,12 @@ return [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'investments',
                     'only' => ['index', 'view', 'options'],
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'investycii',
+                    'only' => ['index', 'view', 'options'],
+                    'pluralize' => false,
                 ],
             ],
         ],
