@@ -98,6 +98,12 @@ return [
                     'only' => ['index', 'view', 'options'],
                     'pluralize' => false,
                 ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'investicii',
+                    'only' => ['index', 'view', 'options'],
+                    'pluralize' => false,
+                ],
             ],
         ],
     ],
