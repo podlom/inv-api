@@ -10,7 +10,7 @@ namespace api\controllers;
 
 
 use yii\rest\ActiveController;
-
+use api\models\InvestsEnSearch;
 
 /**
  * Class InvestmentsController
@@ -20,6 +20,19 @@ use yii\rest\ActiveController;
 class InvestmentsController extends ActiveController
 {
     public $modelClass = 'api\models\InvestsEn';
+
+    public function actions()
+    {
+        $actions = parent::actions();
+
+        // Override the `index` action to use the search model
+        $actions['index']['prepareDataProvider'] = function ($action) {
+            $searchModel = new InvestsEnSearch();
+            return $searchModel->search(\Yii::$app->request->queryParams);
+        };
+
+        return $actions;
+    }
 
     public function fields()
     {
