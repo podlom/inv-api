@@ -10,14 +10,17 @@ declare(strict_types=1);
 namespace api\models;
 
 use yii\base\Model;
+use yii\db\Expression;
 use yii\data\ActiveDataProvider;
 
 class InvestsEnSearch extends InvestsEn
 {
+    public $attr58;
+
     public function rules()
     {
         return [
-            [['parent_id', 'route_id'], 'integer'],
+            [['parent_id', 'route_id', 'attr58'], 'integer'],
             [['id', 'h1', 'published', 'short_text', 'subpath', 'created'], 'safe'],
         ];
     }
@@ -46,6 +49,14 @@ class InvestsEnSearch extends InvestsEn
         // Add other conditions if necessary
         $query->andFilterWhere(['like', 'h1', $this->h1])
             ->andFilterWhere(['like', 'short_text', $this->short_text]);
+
+        if ($this->attr58 !== null && $this->attr58 !== '') {
+            $query->andWhere([
+                '=',
+                new Expression("JSON_UNQUOTE(JSON_EXTRACT(attr, '$.attr58'))"),
+                (string)$this->attr58
+            ]);
+        }
 
         return $dataProvider;
     }
