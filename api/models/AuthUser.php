@@ -1,11 +1,16 @@
 <?php
 
-namespace api\models;
+declare(strict_types=1);
 
+/**
+ * @author    Taras Shkodenko <taras.shkodenko@gmail.com>
+ * @copyright Shkodenko V. Taras, https://www.shkodenko.com/
+ */
+
+namespace api\models;
 
 use Yii;
 use common\models\AuthUser as CommonAuthUser;
-
 
 /**
  * This is the model class for table "{{%Auth_User}}".
@@ -17,7 +22,6 @@ use common\models\AuthUser as CommonAuthUser;
  * @property int $status
  * @property string $attr (DC2Type:json_array)
  * @property int|null $image_id
- *
  * @property AuthLogin[] $authLogins
  * @property AuthSession[] $authSessions
  * @property PagePart $image

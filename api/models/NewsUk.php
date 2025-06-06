@@ -1,15 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 /**
- * @author    Taras Shkodenko <taras@shkodenko.com>
+ * @author    Taras Shkodenko <taras.shkodenko@gmail.com>
  * @copyright Shkodenko V. Taras, https://www.shkodenko.com/
  */
 
 namespace api\models;
 
-
 use Yii;
 use common\models\NewsUk as CommonNewsUk;
-
 
 /**
  * This is the model class for table "{{%news_uk}}".

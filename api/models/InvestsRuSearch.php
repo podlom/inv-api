@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * @author    Taras Shkodenko <taras@shkodenko.com>
+ * @author    Taras Shkodenko <taras.shkodenko@gmail.com>
  * @copyright Shkodenko V. Taras, https://www.shkodenko.com/
  */
 

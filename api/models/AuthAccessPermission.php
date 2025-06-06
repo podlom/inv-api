@@ -1,11 +1,16 @@
 <?php
 
-namespace api\models;
+declare(strict_types=1);
 
+/**
+ * @author    Taras Shkodenko <taras.shkodenko@gmail.com>
+ * @copyright Shkodenko V. Taras, https://www.shkodenko.com/
+ */
+
+namespace api\models;
 
 use Yii;
 use common\models\AuthAccessPermission as CommonAuthAccessPermission;
-
 
 /**
  * This is the model class for table "{{%Auth_Access_Permission}}".
