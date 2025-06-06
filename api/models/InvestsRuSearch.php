@@ -20,8 +20,8 @@ class InvestsRuSearch extends InvestsRu
     public function rules()
     {
         return [
-            [['parent_id', 'route_id'], 'integer'],
-            [['id', 'h1', 'published', 'short_text', 'subpath', 'created', 'attr58'], 'safe'],
+            [['parent_id', 'route_id', 'attr58'], 'integer'],
+            [['id', 'h1', 'published', 'short_text', 'subpath', 'created'], 'safe'],
         ];
     }
 
@@ -58,8 +58,8 @@ class InvestsRuSearch extends InvestsRu
             ]);
         }
 
-        echo $query->createCommand()->getRawSql();
-        exit;
+        // echo $query->createCommand()->getRawSql();
+        // exit;
 
         return $dataProvider;
     }
