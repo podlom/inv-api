@@ -1,13 +1,13 @@
 <?php
 
-namespace api\models;
+declare(strict_types=1);
 
+namespace api\models;
 
 use yii\helpers\Url;
 use yii\db\ActiveRecord;
 use yii\web\Link;
 use yii\web\Linkable;
-
 
 class Feed extends ActiveRecord implements Linkable
 {
