@@ -50,6 +50,8 @@ return [
                 'GET /novyny/<id:\d+>' => 'novyny/view',
                 'GET /novosti/<id:\d+>' => 'novosti/view',
                 'GET /news/<id:\d+>' => 'news/view',
+                'GET /vidhuky/<id:\d+>' => 'vidhuky/view',
+                'GET /reviews/<id:\d+>' => 'reviews/view',
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'novyny',
@@ -109,6 +111,11 @@ return [
                     'controller' => 'vidhuky',
                     'only' => ['index', 'view', 'options'],
                     'pluralize' => false,
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'reviews',
+                    'only' => ['index', 'view', 'options'],
                 ],
             ],
         ],
