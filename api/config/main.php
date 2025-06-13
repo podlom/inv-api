@@ -104,6 +104,12 @@ return [
                     'only' => ['index', 'view', 'options'],
                     'pluralize' => false,
                 ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'vidhuky',
+                    'only' => ['index', 'view', 'options'],
+                    'pluralize' => false,
+                ],
             ],
         ],
     ],
