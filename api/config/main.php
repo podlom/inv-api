@@ -53,6 +53,9 @@ return [
                 'GET /vidhuky/<id:\d+>' => 'vidhuky/view',
                 'GET /reviews/<id:\d+>' => 'reviews/view',
                 'GET /otzyvy/<id:\d+>' => 'otzyvy/view',
+                'GET /digest-vidhuky/<id:\d+>' => 'digest-vidhuky/view',
+                'GET /digest-reviews/<id:\d+>' => 'digest-reviews/view',
+                'GET /digest-otzyvy/<id:\d+>' => 'digest-otzyvy/view',
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'novyny',
@@ -121,6 +124,23 @@ return [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'otzyvy',
+                    'only' => ['index', 'view', 'options'],
+                    'pluralize' => false,
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'digest-vidhuky',
+                    'only' => ['index', 'view', 'options'],
+                    'pluralize' => false,
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'digest-reviews',
+                    'only' => ['index', 'view', 'options'],
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'digest-otzyvy',
                     'only' => ['index', 'view', 'options'],
                     'pluralize' => false,
                 ],
